@@ -6,9 +6,10 @@ describe('Service: security', function() {
   beforeEach(module('security'));
 
   // instantiate service
-  var security;
-  beforeEach(inject(function(_security_) {
+  var security, $rootScope;
+  beforeEach(inject(function(_security_, _$rootScope_) {
     security = _security_;
+    $rootScope = _$rootScope_;
   }));
 
   describe('currentUser', function() {
@@ -17,6 +18,7 @@ describe('Service: security', function() {
       expect(security.isAuthenticated()).toBe(false);
       expect(security.currentUser).not.toBeTruthy();
     });
+
     it('should be authenticated if we update with user info', function() {
       var userInfo = {};
       security.currentUser = userInfo;
@@ -24,6 +26,7 @@ describe('Service: security', function() {
       expect(security.isAdmin()).toBe(false);
       expect(security.currentUser).toBe(userInfo);
     });
+
     it('should be admin if we update with admin user info', function() {
       var userInfo = {
         admin: true
@@ -50,4 +53,25 @@ describe('Service: security', function() {
     });
   });
 
+  describe('login', function() {
+    it('should authenticate parent', function() {
+      expect(security.isAuthenticated()).toBe(false);
+
+      security.login('parent');
+      $rootScope.$apply();
+
+      expect(security.isAuthenticated()).toBe(true);
+      expect(security.isAdmin()).toBe(false);
+    });
+
+    it('should authenticate pro', function() {
+      expect(security.isAuthenticated()).toBe(false);
+      
+      security.login('pro');
+      $rootScope.$apply();
+
+      expect(security.isAuthenticated()).toBe(true);
+      expect(security.isAdmin()).toBe(true);
+    });
+  });
 });
