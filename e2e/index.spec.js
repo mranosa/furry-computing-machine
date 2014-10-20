@@ -4,7 +4,7 @@
  * Name: Redirect user to login homepage
  *
  * Scenario:
- * - user should be in login page on web app load for the first time.
+ * - first time users should be in login page.
  */
 describe('Index View', function() {
 	var indexPage, loginPage, dashboardPage;
