@@ -28,20 +28,22 @@ module.exports = function(config) {
       'www/bower_components/ngCordova/dist/ng-cordova.js',
       'www/bower_components/ng-cordova-mocks/dist/ngCordovaMocks.js',
       'www/app/app.js',
-      'www/app/**/*.js',
-      'www/components/**/*.js'
+      'www/app/dashboard/dashboard.js',
+      'www/app/dashboard/dashboard.controller.js',
+      'www/app/login/login.js',
+      'www/app/login/login.controller.js',
+      'www/components/security/security.service.js',
+      'www/**/*.spec.js'
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wiizbabyApp')
+angular.module('login')
   .controller('LoginCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

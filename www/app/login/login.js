@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wiizbabyApp')
+angular.module('login', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/login', {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wiizbabyApp')
+angular.module('dashboard', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/dashboard', {
