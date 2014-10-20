@@ -28,7 +28,8 @@ module.exports = function(config) {
       'www/bower_components/ngCordova/dist/ng-cordova.js',
       'www/bower_components/ng-cordova-mocks/dist/ngCordovaMocks.js',
       'www/app/app.js',
-      'www/app/**/*.js'
+      'www/app/**/*.js',
+      'www/components/**/*.js'
     ],
 
 
