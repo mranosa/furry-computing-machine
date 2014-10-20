@@ -1,16 +1,15 @@
 'use strict';
 
-angular.module('wiizbabyApp')
-  .factory('security', function () {
-    // Service logic
-    // ...
+angular.module('security', [])
+  .factory('security', function() {
 
-    var meaningOfLife = 42;
-
-    // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      currentUser: undefined,
+      isAuthenticated: function() {
+        return !!this.currentUser;
+      },
+      isAdmin: function() {
+        return !!(this.currentUser && this.currentUser.admin);
       }
     };
   });
