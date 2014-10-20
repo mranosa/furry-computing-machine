@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('login', ['ngRoute'])
+angular.module('login', ['ngRoute', 'security'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/login', {

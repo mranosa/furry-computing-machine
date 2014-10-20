@@ -1,18 +1,18 @@
 'use strict';
 
 /**
- * Name: Redirect user to login homepage
+ * Name: Home Page
  *
  * Scenario:
  * - first time users should be in login page.
  */
-describe('Index View', function() {
+describe('Home Page', function() {
 	var indexPage, loginPage, dashboardPage;
 
 	beforeEach(function() {
-		indexPage = require('./index.po');
-		loginPage = require('./login.po'); 
-		dashboardPage = require('./dashboard.po');;
+		indexPage = require('../index.po');
+		loginPage = require('../login.po'); 
+		dashboardPage = require('../dashboard.po');;
 		
 		indexPage.gotoPage();
 	});
